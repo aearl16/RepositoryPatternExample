@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Homework8.Model.Classification>
+
+@{
+    ViewBag.Title = "Classification";
+}
+
+<h2>Classification</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Artwork.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genre.GenreName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Artwork.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genre.GenreName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ClassificationID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ClassificationID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ClassificationID })
+        </td>
+    </tr>
+}
+
+</table>

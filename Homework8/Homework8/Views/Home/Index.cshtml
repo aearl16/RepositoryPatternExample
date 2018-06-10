@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Homework8.Model.Genre>
+
+@{
+    ViewBag.Title = "Artworks";
+}
+
+@section PageLoad
+{
+    <script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script type="text/javascript" src="~/Scripts/dostuff.js"></script>
+}
+
+
+<div class="jumbotron">
+    <h1>Artist Database</h1>
+    <p class="lead"> Select an Item from the menu to view tables in the database.</p>
+</div>
+
+<div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8 text-center">
+        @foreach (var genre in Model)
+        {
+            <input class="btn btn-default" type="button" value="@genre.GenreName" onclick="genreClicked(@genre.GenreID)" />
+        }
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+<br />
+<div id="DisplayArea" align="center" style="display: none">
+
+    <div id="displayResults"></div>
+
+    @*<table>
+        <thead>
+            <tr>
+                <th> Title </th>
+                <th> Artist Name </th>
+            </tr>
+        </thead>
+        <tbody id="displayResults">
+
+        </tbody>
+    </table>*@
+
+</div>

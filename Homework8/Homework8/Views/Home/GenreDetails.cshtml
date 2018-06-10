@@ -1,0 +1,25 @@
+﻿@model Homework8.Model.Genre
+
+@{
+    ViewBag.Title = "GenreDetails";
+}
+
+<h2>GenreDetails</h2>
+
+<div>
+    <h4>Genre</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GenreName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GenreName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
